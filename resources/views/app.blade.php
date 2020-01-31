@@ -12,12 +12,12 @@
             <div class="container mx-auto">
                 <header class="py-6 mb-8">Header</header>
                 <main class="flex">
-                    <aside class="w-1/5">
+                    <aside class="w-1/5 pt-8">
                         <section class="mb-8">
                             <h5 class="uppercase font-bold mb-4">Snippets</h5>
                             <ul class="list-reset">
-                                <li><router-link to="/">Home</router-link></li>
-                                <li><router-link to="/about">About</router-link>  </li>
+                                <li class="text-sm pb-4"><router-link to="/">Home</router-link></li>
+                                <li class="text-sm pb-4"><router-link to="/about">About</router-link>  </li>
                         </ul>
                         </section>
                         
