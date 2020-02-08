@@ -15,5 +15,7 @@ class SnippetsController extends Controller
 
     public function store() {
         Snippet::create(request(['title', 'description']));
+
+        return redirect('/snippets');
     }
 }
