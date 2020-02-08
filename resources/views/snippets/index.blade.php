@@ -8,13 +8,16 @@
     <h1>Snippets</h1>
 
     <ul>
-        @foreach ($snippets as $snippet)
+        @forelse ($snippets as $snippet)
             <li>
                 <a href="{{ $snippet->path() }}">
                     {{ $snippet->title }} 
                 </a>
             </li>
-        @endforeach
+
+        @empty 
+            <li>No Projects yet</li>
+        @endforelse
     </ul>
 </body>
 </html>

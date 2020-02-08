@@ -15,22 +15,28 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_user_can_create_snippet()
-    {
 
-        $this->withoutExceptionHandling();
+        public function test_authenticated_users_can_create_a_snippet() {
+            $attributes = factory('App\Snippet')->raw();
 
-        $attributes = [
-            'title' => $this->faker->sentence,
-            'description' => $this->faker->paragraph,
-        ];
+            $this->post('/projects', $attributes)->assertRedirect('login');
+        }
+    // public function test_user_can_create_snippet()
+    // {
 
-        $this->post('/snippets', $attributes)->assertRedirect('/snippets');
+    //     $this->withoutExceptionHandling();
 
-        $this->assertDatabaseHas('snippets', $attributes);
+    //     $attributes = [
+    //         'title' => $this->faker->sentence,
+    //         'description' => $this->faker->paragraph,
+    //     ];
 
-        $this->get('/snippets')->assertSee($attributes['title']);
-    }
+    //     $this->post('/snippets', $attributes)->assertRedirect('/snippets');
+
+    //     $this->assertDatabaseHas('snippets', $attributes);
+
+    //     $this->get('/snippets')->assertSee($attributes['title']);
+    // }
 
         public function test_a_user_can_view_a_snippet() {
             $this->withoutExceptionHandling();
@@ -40,5 +46,11 @@ class ExampleTest extends TestCase
             $this->get($snippet->path())
                 ->assertSee($snippet->title)
                 ->assertSee($snippet->description);
+        }
+
+        public function test_a_snippet_required_an_owner() {
+            $attributes = factory('App\Snippet')->raw();
+
+            $this->post('/snippets', $attributes)->assertRedirect('/login');
         }
 }

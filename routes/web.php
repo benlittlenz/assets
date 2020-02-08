@@ -26,4 +26,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/snippets', 'SnippetsController@index');
 Route::get('/snippets/{snippet}', 'SnippetsController@show');
-Route::post('/snippets', 'SnippetsController@store');
+Route::post('/snippets', 'SnippetsController@store')->middleware('auth');

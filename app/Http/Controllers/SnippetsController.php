@@ -24,7 +24,9 @@ class SnippetsController extends Controller
             'description' => 'required'
         ]);
 
-        Snippet::create($attributes);
+        //$attributes['owner_id'] = auth()->id();
+
+        auth()->user()->snippets()->create($attributes);
 
         return redirect('/snippets');
     }
