@@ -13,6 +13,12 @@ class SnippetsController extends Controller
         return view('snippets.index', compact('snippets'));
     }
 
+    public function show() {
+        $project = Project::findOrFail(request('snippet'));
+
+        return view('snippets.show', compact('snippet'));
+    }
+
     public function store() {
 
         $attributes = request()->validate([
