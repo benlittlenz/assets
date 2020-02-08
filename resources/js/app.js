@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
+import Vuetify from 'vuetify'
+import VeeValidate from 'vee-validate'
 import routes from './routes'
 import VueHighlightJS from 'vue-highlight.js';
 
@@ -13,6 +15,8 @@ import 'vue-highlight.js/lib/allLanguages'
 import 'highlight.js/styles/tomorrow-night.css';
 Vue.use(VueHighlightJS);
 Vue.use(VueRouter)
+Vue.use(Vuetify)
+Vue.use(VeeValidate, { inject: false })
 
 const app = new Vue({
     el: '#app',

@@ -22,11 +22,13 @@ class ExampleTest extends TestCase
 
         $attributes = [
             'title' => $this->faker->sentence,
-            'title' => $this->faker->paragraph,
+            'description' => $this->faker->paragraph,
         ];
 
-        $this->post('/snippets', $attributes);
+        $this->post('/snippets', $attributes)->assertRedirect('/snippets');
 
         $this->assertDatabaseHas('snippets', $attributes);
+
+        $this->get('/snippets')->assertSEE($attributes['title']);
     }
 }

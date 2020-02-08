@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -8,9 +9,10 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <div id="app">
+
             <div class="container mx-auto">
                 <header class="py-6 mb-8">Header</header>
+                
                 <main class="flex">
                     <aside class="w-1/5 pt-8">
                         <section class="mb-8">
@@ -18,7 +20,7 @@
                             <ul class="list-reset">
                                 <li class="text-sm pb-4"><router-link to="/">Home</router-link></li>
                                 <li class="text-sm pb-4"><router-link to="/about">About</router-link>  </li>
-                        </ul>
+                            </ul>
                         </section>
                         
                         

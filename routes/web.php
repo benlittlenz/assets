@@ -11,6 +11,11 @@
 |
 */
 
+// Route everything else to Vue
+// Route::get('{any?}', function () {
+//     return view('app');
+// })->where('any', '.*');
+
 Route::get('/', function () {
     return view('app');
 });
@@ -19,6 +24,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/snippets', function() {
+Route::get('/snippets', 'SnippetsController@index');
 
-});
+Route::post('/snippets', 'SnippetsController@store');
