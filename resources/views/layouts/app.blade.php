@@ -63,6 +63,9 @@
                                     <a class="text-accent no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             @else
+
+                                <a href="/snippets" class="mr-8 w-full">Snippets</a>
+                                <a href="/snippets/create" class="mr-8 w-full">Create</a>
                                 <dropdown align="right" width="200px">
                                     <template v-slot:trigger>
                                         <button
@@ -72,10 +75,10 @@
                                             {{ auth()->user()->name }}
                                         </button>
                                     </template>
-
+                                    
                                     <form id="logout-form" method="POST" action="/logout">
                                         @csrf
-
+                                        
                                         <button type="submit" class="dropdown-menu-link w-full text-left">Logout</button>
                                     </form>
                                 </dropdown>
