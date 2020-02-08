@@ -13,9 +13,7 @@ class SnippetsController extends Controller
         return view('snippets.index', compact('snippets'));
     }
 
-    public function show() {
-        $project = Project::findOrFail(request('snippet'));
-
+    public function show(Snippet $snippet) {
         return view('snippets.show', compact('snippet'));
     }
 

@@ -29,15 +29,15 @@ class ExampleTest extends TestCase
 
         $this->assertDatabaseHas('snippets', $attributes);
 
-        $this->get('/snippets')->assertSEE($attributes['title']);
+        $this->get('/snippets')->assertSee($attributes['title']);
     }
 
         public function test_a_user_can_view_a_snippet() {
             $this->withoutExceptionHandling();
-            
+
             $snippet = factory('App\Snippet')->create();
 
-            $this->get('/snippets/' . $project.id)
+            $this->get('/snippets/' . $snippet->id)
                 ->assertSee($snippet->title)
                 ->assertSee($snippet->description);
         }
