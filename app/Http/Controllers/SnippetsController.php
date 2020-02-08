@@ -14,7 +14,13 @@ class SnippetsController extends Controller
     }
 
     public function store() {
-        Snippet::create(request(['title', 'description']));
+
+        $attributes = request()->validate([
+            'title' => 'required', 
+            'description' => 'required'
+        ]);
+
+        Snippet::create($attributes);
 
         return redirect('/snippets');
     }
