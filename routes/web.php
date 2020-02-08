@@ -22,8 +22,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::group(['middleware' => 'auth']. function() {
+// Route::get('/snippets', 'SnippetsController@index');
+// Route::get('/snippets/{snippet}', 'SnippetsController@show');
+// Route::post('/snippets', 'SnippetsController@store')->middleware('auth');
+// });
 
 Route::get('/snippets', 'SnippetsController@index');
+Route::get('/snippets/create', 'SnippetsController@create');
 Route::get('/snippets/{snippet}', 'SnippetsController@show');
 Route::post('/snippets', 'SnippetsController@store')->middleware('auth');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+

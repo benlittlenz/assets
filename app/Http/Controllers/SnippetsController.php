@@ -13,6 +13,10 @@ class SnippetsController extends Controller
         return view('snippets.index', compact('snippets'));
     }
 
+    public function create() {
+        return view('snippets.create');
+    }
+
     public function show(Snippet $snippet) {
         return view('snippets.show', compact('snippet'));
     }

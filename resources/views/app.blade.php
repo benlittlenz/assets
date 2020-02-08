@@ -10,7 +10,12 @@
     </head>
     <body>
 
-            <div class="container mx-auto">
+        @extends ('layouts.app')
+
+        @section ('content')
+        @endsection
+
+            {{-- <div class="container mx-auto">
                 <header class="py-6 mb-8">Header</header>
                 
                 <main class="flex">
@@ -25,17 +30,17 @@
                         
                         
                           
-                    </aside>
+                    </aside> --}}
 
-                    <div class="primary flex-1">
+                    {{-- <div class="primary flex-1">
                         <router-view></router-view>
                     </div>
                 </main>
-                
+                 --}}
 
 
-            </div>
-        </div>
+            {{-- </div>
+        </div> --}}
         <script src="/js/app.js"></script>
     </body>
 </html>
