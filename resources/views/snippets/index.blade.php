@@ -1,3 +1,7 @@
+@extends ('layouts.app')
+
+@section ('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +10,17 @@
 </head>
 <body>
     <h1>Snippets</h1>
-
-    <ul>
+<div class="flex mb-4">
         @forelse ($snippets as $snippet)
-            <li>
-                <a href="{{ $snippet->path() }}">
-                    {{ $snippet->title }} 
-                </a>
-            </li>
-
+            <div class="lg:w-1/3 px-3 pb-6">
+                @include ('snippets.card')
+            </div>
+        
         @empty 
-            <li>No Projects yet</li>
+            <li>No Snippets yet</li>
         @endforelse
-    </ul>
+
 </body>
 </html>
+
+@endsection
