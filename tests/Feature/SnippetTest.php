@@ -37,7 +37,7 @@ class ExampleTest extends TestCase
 
             $snippet = factory('App\Snippet')->create();
 
-            $this->get('/snippets/' . $snippet->id)
+            $this->get($snippet->path())
                 ->assertSee($snippet->title)
                 ->assertSee($snippet->description);
         }

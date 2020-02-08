@@ -9,7 +9,11 @@
 
     <ul>
         @foreach ($snippets as $snippet)
-            <li>{{ $snippet->title }} </li>
+            <li>
+                <a href="{{ $snippet->path() }}">
+                    {{ $snippet->title }} 
+                </a>
+            </li>
         @endforeach
     </ul>
 </body>
