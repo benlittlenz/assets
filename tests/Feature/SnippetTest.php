@@ -31,4 +31,14 @@ class ExampleTest extends TestCase
 
         $this->get('/snippets')->assertSEE($attributes['title']);
     }
+
+        public function test_a_user_can_view_a_snippet() {
+            $this->withoutExceptionHandling();
+            
+            $snippet = factory('App\Snippet')->create();
+
+            $this->get('/snippets/' . $project.id)
+                ->assertSee($snippet->title)
+                ->assertSee($snippet->description);
+        }
 }
