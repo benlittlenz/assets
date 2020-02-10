@@ -9,10 +9,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Snippets</h1>
+    <h1 class="text-center">Snippets</h1>
 <div class="flex mb-4">
         @forelse ($snippets as $snippet)
-            <div class="lg:w-1/3 px-3 pb-6">
+            <div class="lg:w-1/3 px-3 pb-6 p-12">
                 @include ('snippets.card')
             </div>
         

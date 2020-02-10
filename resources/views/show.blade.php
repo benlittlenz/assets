@@ -15,7 +15,7 @@
 
         @section ('content')
         @endsection
-<div id="example"></div>
+        <div id="example"></div>
             {{-- <div class="container mx-auto">
                 <header class="py-6 mb-8">Header</header>
                 

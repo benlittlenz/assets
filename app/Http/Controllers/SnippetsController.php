@@ -25,7 +25,8 @@ class SnippetsController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required', 
-            'description' => 'required'
+            'description' => 'required',
+            'code' => 'required'
         ]);
 
         //$attributes['owner_id'] = auth()->id();

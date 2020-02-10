@@ -18,6 +18,7 @@ class CreateSnippetsTable extends Migration
             $table->unsignedBigInteger('owner_id');
             $table->string('title');
             $table->text('description');
+            $table->text('code');
             $table->timestamps();
 
             $table->foreign('owner_id')
